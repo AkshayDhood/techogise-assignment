@@ -17,6 +17,24 @@ export class ChessBoard {
   }
 
   /**
+   * Process the input and get output of all possible moves
+   * @returns string[]
+   */
+  processOnInputAndGetOutput(): string[] {
+    // validate input
+    this.validateInput();
+
+    // get position details
+    const positionDetails = this.getPositionDetails();
+
+    // get all possible positions
+    const possiblePositions = this.getAllPossibleMoves(positionDetails);
+
+    // convert positions to proper string
+    return convertPositionDetails(possiblePositions);
+  }
+
+  /**
    * Validate provided input
    * @returns void
    */
@@ -40,24 +58,8 @@ export class ChessBoard {
   }
 
   /**
-   * Process the input and get output of all possible moves
-   */
-  processOnInputAndGetOutput(): string[] {
-    // validate input
-    this.validateInput();
-
-    // get position details
-    const positionDetails = this.getPositionDetails();
-
-    // get all possible positions
-    const possiblePositions = this.getAllPossibleMoves(positionDetails);
-
-    // convert positions to proper string
-    return convertPositionDetails(possiblePositions);
-  }
-
-  /**
    * Get all possible moves.
+   * @returns Position[]
    */
   private getAllPossibleMoves(positionDetails: Position): Position[] {
     const possiblePositions: Position[] = [];

@@ -2,28 +2,28 @@ import { ChessBoard } from '../src/chessBoard';
 
 describe('Chess board movement tests', () => {
   // Pawn Tests starts
-  test('Pawn at A1', () => {
+  test('should get correct position for Pawn at A1', () => {
     const chessBoard = new ChessBoard('Pawn', 'A1');
     const allPossibleMoves = chessBoard.processOnInputAndGetOutput();
 
     expect(allPossibleMoves.sort()).toEqual(['A2']);
   });
 
-  test('Pawn at H8', () => {
+  test('should get correct position for Pawn at H8', () => {
     const chessBoard = new ChessBoard('Pawn', 'H8');
     const allPossibleMoves = chessBoard.processOnInputAndGetOutput();
 
     expect(allPossibleMoves.sort()).toEqual(['H8']);
   });
 
-  test('Pawn at A8', () => {
+  test('should get correct position for Pawn at A8', () => {
     const chessBoard = new ChessBoard('Pawn', 'A8');
     const allPossibleMoves = chessBoard.processOnInputAndGetOutput();
 
     expect(allPossibleMoves.sort()).toEqual(['A8']);
   });
 
-  test('Pawn at E2', () => {
+  test('should get correct position for Pawn at E2', () => {
     const chessBoard = new ChessBoard('Pawn', 'E2');
     const allPossibleMoves = chessBoard.processOnInputAndGetOutput();
 
@@ -32,28 +32,28 @@ describe('Chess board movement tests', () => {
   // Pawn Tests ends
 
   // King Tests start
-  test('King at A1', () => {
+  test('should get correct position for King at A1', () => {
     const chessBoard = new ChessBoard('King', 'A1');
     const allPossibleMoves = chessBoard.processOnInputAndGetOutput();
 
     expect(allPossibleMoves.sort()).toEqual(['A2', 'B1', 'B2']);
   });
 
-  test('King at H8', () => {
+  test('should get correct position for King at H8', () => {
     const chessBoard = new ChessBoard('King', 'H8');
     const allPossibleMoves = chessBoard.processOnInputAndGetOutput();
 
     expect(allPossibleMoves.sort()).toEqual(['G7', 'G8', 'H7']);
   });
 
-  test('King at A8', () => {
+  test('should get correct position for King at A8', () => {
     const chessBoard = new ChessBoard('King', 'A8');
     const allPossibleMoves = chessBoard.processOnInputAndGetOutput();
 
     expect(allPossibleMoves.sort()).toEqual(['A7', 'B7', 'B8']);
   });
 
-  test('King at C5', () => {
+  test('should get correct position for King at C5', () => {
     const chessBoard = new ChessBoard('King', 'C5');
     const allPossibleMoves = chessBoard.processOnInputAndGetOutput();
 
@@ -71,7 +71,7 @@ describe('Chess board movement tests', () => {
   // King Tests ends
 
   // Queen Tests starts
-  test('Queen at A1', () => {
+  test('should get correct position for Queen at A1', () => {
     const chessBoard = new ChessBoard('Queen', 'A1');
     const allPossibleMoves = chessBoard.processOnInputAndGetOutput();
 
@@ -100,7 +100,7 @@ describe('Chess board movement tests', () => {
     ]);
   });
 
-  test('Queen at H8', () => {
+  test('should get correct position for Queen at H8', () => {
     const chessBoard = new ChessBoard('Queen', 'H8');
     const allPossibleMoves = chessBoard.processOnInputAndGetOutput();
 
@@ -129,7 +129,7 @@ describe('Chess board movement tests', () => {
     ]);
   });
 
-  test('Queen at A8', () => {
+  test('should get correct position for Queen at A8', () => {
     const chessBoard = new ChessBoard('Queen', 'A8');
     const allPossibleMoves = chessBoard.processOnInputAndGetOutput();
 
@@ -158,7 +158,7 @@ describe('Chess board movement tests', () => {
     ]);
   });
 
-  test('Queen at E4', () => {
+  test('should get correct position for Queen at E4', () => {
     const chessBoard = new ChessBoard('Queen', 'E4');
     const allPossibleMoves = chessBoard.processOnInputAndGetOutput();
 

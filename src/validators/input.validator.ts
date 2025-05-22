@@ -4,36 +4,40 @@ import { PiecesEnum, Position } from '../types';
 
 /**
  * Check if Chess piece is correct
- * @param piece 
+ * @param piece
  * @throws InvalidPieceError
  */
 export const validatePieceType = (piece: string) => {
-  if (!piece || !Object.values(PiecesEnum).includes(piece as PiecesEnum)) {
-    throw new InvalidPieceError();
+  if (!piece) throw new InvalidPieceError('Piece Not found.');
+
+  if (!Object.values(PiecesEnum).includes(piece as PiecesEnum)) {
+    throw new InvalidPieceError('Incorrect Piece');
   }
 };
 
 /**
  * Check if Piece position is correct
- * @param position 
+ * @param position
  * @throws InvalidPositionError
  */
 export const validatePosition = (position: string) => {
-  if (!position || position.length !== 2) {
-    throw new InvalidPositionError();
+  if (!position) throw new InvalidPositionError('Position not found.');
+
+  if (position.length !== 2) {
+    throw new InvalidPositionError('Incorrect Position');
   }
 
   const columnIndex = rows.indexOf(position[0]);
   const rowIndex = parseInt(position[1]);
 
   if (columnIndex === -1 || rowIndex < minRow || rowIndex > maxRow) {
-    throw new InvalidPositionError();
+    throw new InvalidPositionError('Incorrect Position');
   }
 };
 
 /**
  * Check if new positions are correct
- * @param param0 
+ * @param param0
  * @returns boolean
  */
 export const isValidPosition = ({ row, column }: Position): boolean => {
