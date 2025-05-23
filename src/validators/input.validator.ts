@@ -1,4 +1,4 @@
-import { rows, maxRow, minRow } from '../constants';
+import { rows, maxColumn, minColumn } from '../constants';
 import { InvalidPieceError, InvalidPositionError } from '../errors';
 import { PiecesEnum, Position } from '../types';
 
@@ -27,21 +27,24 @@ export const validatePosition = (position: string) => {
     throw new InvalidPositionError('Incorrect Position');
   }
 
-  const columnIndex = rows.indexOf(position[0]);
-  const rowIndex = parseInt(position[1]);
+  const rowIndex = rows.indexOf(position[0]);
+  const columnIndex = parseInt(position[1]);
 
-  if (columnIndex === -1 || rowIndex < minRow || rowIndex > maxRow) {
+  if (rowIndex === -1 || columnIndex < minColumn || columnIndex > maxColumn) {
     throw new InvalidPositionError('Incorrect Position');
   }
 };
 
 /**
  * Check if new positions are correct
- * @param param0
+ * @param Position
  * @returns boolean
  */
 export const isValidPosition = ({ row, column }: Position): boolean => {
   return (
-    row >= minRow - 1 && row < maxRow && column >= minRow - 1 && column < maxRow
+    row >= minColumn - 1 &&
+    row < maxColumn &&
+    column >= minColumn - 1 &&
+    column < maxColumn
   );
 };

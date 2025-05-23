@@ -10,11 +10,9 @@ try {
   const [piece, position] = args as [string, string];
 
   const chessBoard = new ChessBoard(piece, position);
-  const allPossibleMoves = chessBoard.processOnInputAndGetOutput();
+  const output = chessBoard.processOnInputAndGetOutput();
 
-  console.log(
-    `All Possible Positions the ${piece} can move are ${allPossibleMoves.join(', ')}`,
-  );
+  console.log(output);
 } catch (error) {
   console.log((error as Error).message);
   process.exit(1);
